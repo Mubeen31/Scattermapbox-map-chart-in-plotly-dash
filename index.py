@@ -23,10 +23,10 @@ app.layout = html.Div([
 
     html.Div([
       html.Div([
-        dcc.Link('World Covid - 19 Data', href='/apps/World_covid_19_data', style = {"margin-bottom": "20px", 'padding': '25px', 'fontWeight': 'bold', 'color': 'blue'}),
-        dcc.Link('US Cities Data', href='/apps/us_cities_data', style = {"margin-bottom": "20px", 'padding': '25px', 'fontWeight': 'bold', 'color': 'blue'}),
-        dcc.Link('All Countries Covid - 19 Data (Bubble Chart)', href='/apps/all_countries_covid_19_data', style = {"margin-bottom": "20px", 'padding': '25px', 'fontWeight': 'bold', 'color': 'blue'}),
-        dcc.Link('All Countries Covid - 19 Data (scatter Chart)', href='/apps/all_countries_covid_19_data_scatter', style = {"margin-bottom": "20px", 'padding': '25px', 'fontWeight': 'bold', 'color': 'blue'}),
+        dcc.Link('World Covid - 19 Data', href='/apps/World_covid_19_data', className="tab"),
+        dcc.Link('US Cities Data', href='/apps/us_cities_data', className="tab"),
+        dcc.Link('All Countries Covid - 19 Data (Bubble Chart)', href='/apps/all_countries_covid_19_data', className="tab"),
+        dcc.Link('All Countries Covid - 19 Data (scatter Chart)', href='/apps/all_countries_covid_19_data_scatter', className="tab"),
 
         ], className = "create_container3 ten columns", id = "title1"),
 
@@ -47,8 +47,16 @@ def display_page(pathname):
         return all_countries_covid_19_data.layout
     elif pathname == '/apps/all_countries_covid_19_data_scatter':
         return all_countries_covid_19_data_scatter.layout
+
+        return (
+            World_covid_19_data.layout,
+            us_cities_data.layout,
+            all_countries_covid_19_data.layout,
+            all_countries_covid_19_data_scatter.layout,
+            )
+
     else:
-        return "Page Error! Please select a link"
+        return World_covid_19_data.layout
 
 
 if __name__ == '__main__':
