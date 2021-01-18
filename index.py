@@ -28,7 +28,7 @@ app.layout = html.Div([
         dcc.Link('All Countries Covid - 19 Data (Bubble Chart)', href='/apps/all_countries_covid_19_data', className="tab"),
         dcc.Link('All Countries Covid - 19 Data (scatter Chart)', href='/apps/all_countries_covid_19_data_scatter', className="tab"),
 
-        ], className = "create_container3 ten columns", id = "title1"),
+        ], className = "create_container3 twelve columns", id = "title1"),
 
     ], id = "header1", className = "row flex-display"),
 
